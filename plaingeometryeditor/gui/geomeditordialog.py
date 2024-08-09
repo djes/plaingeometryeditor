@@ -169,7 +169,8 @@ class GeomEditorDialog(QDialog, Ui_GeomEditor, SettingDialog):
             
     def updateFeatureRubber(self):
         self.featureRubber.setColor(self.settings.value("featureRubberColor"))
-        self.featureRubber.setWidth(self.settings.value("featureRubberSize"))
+        # JB - bug on QGIS 3.34
+        #self.featureRubber.setWidth(self.settings.value("featureRubberSize"))
         self.layer.triggerRepaint()
         
     def updateCurrentPointRubber(self):
